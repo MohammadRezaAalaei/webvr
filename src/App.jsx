@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useRef, useState } from 'react';
+import "./App.css"
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Box, CameraControls } from '@react-three/drei';
+import Experience from './experience';
+import { Model } from './scene';
+import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/xr'
+import { TeleportationPlane } from '@react-three/xr'
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='App'>
+      <Canvas>
+      <XR>
+        <TeleportationPlane
+          /** Whether to allow teleportation from left controller. Default is `false` */
+          leftHand={true}
+          /** Whether to allow teleportation from right controller. Default is `false` */
+          rightHand={false}
+          /** The maximum distance from the camera to the teleportation point. Default is `10` */
+          maxDistance={10}
+          /** The radial size of the teleportation marker. Default is `0.25` */
+          size={0.25}
+        />
+        <CameraControls speed={1.5} global zoom={0.7} />
+        <Experience/>
+      </XR>
+      </Canvas>
+    </div>
   )
 }
 
-export default App
+export default App;
