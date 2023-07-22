@@ -10,8 +10,10 @@ function App() {
   return (
     <div className='App'>
       <Canvas>
+      <XR>
         <CameraControls speed={1.5} global zoom={0.7} />
         <Experience/>
+      </XR>
       </Canvas>
     </div>
   )
