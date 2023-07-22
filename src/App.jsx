@@ -13,6 +13,7 @@ function App() {
       <Canvas>
       <XR>
         <Controllers />
+        <Hands />
         <CameraControls speed={1.5} global zoom={0.7} />
         <Experience/>
       </XR>
