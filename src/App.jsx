@@ -12,6 +12,7 @@ function App() {
       <VRButton />
       <Canvas>
       <XR>
+      
         <Controllers />
         <Hands />
         <CameraControls speed={1.5} global zoom={0.7} />
