@@ -10,6 +10,7 @@ function App() {
   return (
     <div className='App'>
       <VRButton />
+      <Controllers />
       <Canvas>
       <XR>
         <CameraControls speed={1.5} global zoom={0.7} />
