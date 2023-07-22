@@ -9,6 +9,7 @@ import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/xr'
 function App() {
   return (
     <div className='App'>
+      <VRButton />
       <Canvas>
       <XR>
         <CameraControls speed={1.5} global zoom={0.7} />
