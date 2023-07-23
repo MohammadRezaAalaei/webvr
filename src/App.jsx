@@ -4,7 +4,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Box, CameraControls, OrbitControls } from '@react-three/drei';
 import Experience from './experience';
 import { Model } from './scene';
-import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/xr'
+import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/drei'
 import { TeleportationPlane } from '@react-three/xr'
 import {orbitControls} from "@react-three/xr"
 
@@ -26,7 +26,7 @@ function App() {
           /** The radial size of the teleportation marker. Default is `0.25` */
           size={0.25}
         />
-        <OrbitControls/>
+        <OrbitControls />
         <CameraControls speed={1.5} global zoom={0.7} />
         <Experience/>
       </XR>
