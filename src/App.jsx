@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
 import "./App.css"
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Box, CameraControls } from '@react-three/drei';
+import { Box, CameraControls, OrbitControls } from '@react-three/drei';
 import Experience from './experience';
 import { Model } from './scene';
-import { VRButton, ARButton, XR, Controllers, Hands, useXR, OrbitControls} from '@react-three/xr'
+import { VRButton, ARButton, XR, Controllers, Hands, useXR} from '@react-three/xr'
 import { TeleportationPlane } from '@react-three/xr'
 
 function App() {
@@ -14,7 +14,6 @@ function App() {
       <Canvas>
       <XR>
         <Controllers />
-        <OrbitControls />
         <Hands />
         <TeleportationPlane
           /** Whether to allow teleportation from left controller. Default is `false` */
@@ -27,7 +26,7 @@ function App() {
           size={0.25}
         />
         
-        <CameraControls speed={1.5} global zoom={0.7} />
+        <OrbitControls/>
         <Experience/>
       </XR>
       </Canvas>
