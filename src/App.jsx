@@ -4,9 +4,9 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Box, CameraControls, OrbitControls } from '@react-three/drei';
 import Experience from './experience';
 import { Model } from './scene';
-import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/drei'
+import { VRButton, ARButton, XR, Controllers, Hands } from '@react-three/xr'
 import { TeleportationPlane } from '@react-three/xr'
-import {orbitControls} from "@react-three/xr"
+import {orbitControls} from "@react-three/drei"
 
 function App() {
   return (
