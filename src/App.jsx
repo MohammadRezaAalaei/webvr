@@ -6,6 +6,8 @@ import Experience from './experience';
 import { Model } from './scene';
 import { VRButton, ARButton, XR, Controllers, Hands, useXR} from '@react-three/xr'
 import { TeleportationPlane } from '@react-three/xr'
+import SmoothLocomotion from './SmoothLocomotion.jsx'
+import SnapRotation from './SnapRotation'
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
       <XR>
         <Controllers />
         <Hands />
-        <TeleportationPlane
+        {/* <TeleportationPlane */}
           /** Whether to allow teleportation from left controller. Default is `false` */
           leftHand={true}
           /** Whether to allow teleportation from right controller. Default is `false` */
@@ -27,6 +29,8 @@ function App() {
         />
         
         <OrbitControls/>
+        <SmoothLocomotion hand="left" />
+        <SnapRotation hand="right" />
         <Experience/>
       </XR>
       </Canvas>
